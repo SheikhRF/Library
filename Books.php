@@ -6,12 +6,12 @@
     
 </head>
 <body>
-   <form action="adduser.php" method="post">
-  First name:<input type="text" name="forename"><br>
-  Last name:<input type="text" name="surname"><br>
-  Password:<input type="password" name="passwd"><br>
-  House:<input type="text" name="house"><br>
-  Year:<input type="text" name="year"><br>
+   <form action="addbook.php" method="post">
+  Title:<input type="text" name="title"><br>
+  Author:<input type="text" name="author"><br>
+  Genre:<input type="text" name="genre"><br>
+  Blurb:<input type="text" name="house"><br>
+  Rating:<input type="text" name="year"><br>
   <!--Creates a drop down list-->
   Gender:<select name="gender">
 		<option value="M">Male</option>
