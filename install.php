@@ -46,5 +46,35 @@ role TINYINT(1) NOT NULL);
 $statement->execute();
 $statement->closeCursor();
 
+include_once("connection.php");
+$statement=$conn->prepare("
+DROP TABLE IF EXISTS tbl_loans;
+CREATE TABLE tbl_loans
+(loan_id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+book_id INT(5) NOT NULL,
+user_id INT(5) NOT NULL,
+return_date VARCHAR(10) NOT NULL,
+returned BOOLEAN NOT NULL,
+rating TINYINT(1),
+review TEXT);
+");
+
+$statement->execute();
+$statement->closeCursor();
+
+include_once("connection.php");
+$statement=$conn->prepare("
+DROP TABLE IF EXISTS tbl_reviews;
+CREATE TABLE tbl_reviews
+(review_id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+book_id INT(5) NOT NULL,
+user_id INT(5) NOT NULL,
+username TEXT NOT NULL,
+review TEXT NOT NULL,
+rating TINYINT(1) NOT NULL);
+");
+
+$statement->execute();
+$statement->closeCursor();
 
 ?>
