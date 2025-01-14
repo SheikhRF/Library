@@ -38,7 +38,8 @@ $statement=$conn->prepare("
 DROP TABLE IF EXISTS tbl_users;
 CREATE TABLE tbl_users
 (user_id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-username TEXT NOT NULL,
+forename TEXT NOT NULL,
+surname TEXT NOT NULL,
 address TEXT NOT NULL,
 email TEXT NOT NULL,
 password VARCHAR(200) NOT NULL,
