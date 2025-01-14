@@ -15,7 +15,7 @@ $sql = "USE library";
 $conn->exec($sql);
 echo "DB created successfully";
 
-include_once("connection.php");
+
 $statement=$conn->prepare("
 DROP TABLE IF EXISTS tbl_books;
 CREATE TABLE tbl_books
@@ -33,7 +33,7 @@ cover VARCHAR(255) NOT NULL);
 $statement->execute();
 $statement->closeCursor();
 
-include_once("connection.php");
+
 $statement=$conn->prepare("
 DROP TABLE IF EXISTS tbl_users;
 CREATE TABLE tbl_users
@@ -49,7 +49,6 @@ role TINYINT(1) NOT NULL);
 $statement->execute();
 $statement->closeCursor();
 
-include_once("connection.php");
 $statement=$conn->prepare("
 DROP TABLE IF EXISTS tbl_loans;
 CREATE TABLE tbl_loans
@@ -65,7 +64,7 @@ review TEXT);
 $statement->execute();
 $statement->closeCursor();
 
-include_once("connection.php");
+
 $statement=$conn->prepare("
 DROP TABLE IF EXISTS tbl_reviews;
 CREATE TABLE tbl_reviews

@@ -19,13 +19,10 @@
 </form>
 <?php
 	include_once('connection.php');
-	$stmt = $conn->prepare("SELECT * FROM TblUser");
+	$stmt = $conn->prepare("SELECT * FROM tbl_books");
 	$stmt->execute();
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-		{
-			echo($row["Forename"].' '.$row["Surname"]."<br>");
-		}
-
+		
 
 
 ?>   
