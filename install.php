@@ -25,8 +25,8 @@ author TEXT NOT NULL,
 genre TEXT NOT NULL,
 blurb TEXT NOT NULL,
 rating TINYINT(1) NOT NULL,
-t_copies TINYINT(2) NOT NULL,
-a_copies TINYINT(2) NOT NULL,
+t_copies TINYINT(2) ,
+a_copies TINYINT(2) ,
 cover VARCHAR(255) NOT NULL);
 ");
 

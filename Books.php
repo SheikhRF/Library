@@ -15,7 +15,7 @@
 
 
   <input type="file" name="cover" id="cover">
-  <input type="submit" value="Upload Image" name="submit">
+  <input type="submit" value="Submit" name="submit">
 </form>
 <?php
 	include_once('connection.php');
