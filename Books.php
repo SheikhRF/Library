@@ -6,7 +6,7 @@
     
 </head>
 <body>
-   <form action="addbook.php" method="post">
+   <form action="addbook.php" method="post" enctype="multipart/form-data">
   Title:<input type="text" name="title"><br>
   Author:<input type="text" name="author"><br>
   Genre:<input type="text" name="genre"><br>
