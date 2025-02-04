@@ -4,17 +4,34 @@ include_once("connection.php");
 array_map("htmlspecialchars", $_POST);
 
 
-$stmt = $conn->prepare("INSERT INTO tbl_books (book_id,title,author,genre,blurb,rating,t_copies,a_copies,cover)
-VALUES (null,:title,:author,:genre,:blurb,:rating,null,null,:cover)");
-
-
+$stmt = $conn->prepare("SELECT t_copies, a_copies FROM tbl_books WHERE title = :title AND author = :author");
 $stmt->bindParam(':title', $_POST["title"]);
 $stmt->bindParam(':author', $_POST["author"]);
-$stmt->bindParam(':genre', $_POST["genre"]);
-$stmt->bindParam(':blurb', $_POST["blurb"]);
-$stmt->bindParam(':rating', $_POST["rating"]);
-$stmt->bindParam(':cover', $_FILES["cover"]["name"]);
 $stmt->execute();
+$book = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($book) {
+    $new_t_copies = $book['t_copies'] + 1;
+    $new_a_copies = $book['a_copies'] + 1;
+
+    $update_stmt = $conn->prepare("UPDATE tbl_books SET t_copies = :t_copies, a_copies = :a_copies WHERE title = :title AND author = :author");
+    $update_stmt->bindParam(':t_copies', $new_t_copies);
+    $update_stmt->bindParam(':a_copies', $new_a_copies);
+    $update_stmt->bindParam(':title', $_POST["title"]);
+    $update_stmt->bindParam(':author', $_POST["author"]);
+    $update_stmt->execute();
+} else {
+    $stmt = $conn->prepare("INSERT INTO tbl_books (book_id, title, author, genre, blurb, rating, t_copies, a_copies, cover)
+    VALUES (null, :title, :author, :genre, :blurb, :rating, 1, 1, :cover)");
+
+    $stmt->bindParam(':title', $_POST["title"]);
+    $stmt->bindParam(':author', $_POST["author"]);
+    $stmt->bindParam(':genre', $_POST["genre"]);
+    $stmt->bindParam(':blurb', $_POST["blurb"]);
+    $stmt->bindParam(':rating', $_POST["rating"]);
+    $stmt->bindParam(':cover', $_FILES["cover"]["name"]);
+    $stmt->execute();
+}
 
 $target_dir = "images/";
     print_r($_FILES);
