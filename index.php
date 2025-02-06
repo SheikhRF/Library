@@ -70,7 +70,7 @@
             $active = "active"; // First image should be active
             foreach ($images as $image) {
                 echo "<div class='carousel-item $active'>";
-                echo "<a href='$image' target='_blank'><img src='$image' class='d-block w-100'></a>";
+                echo "<a href='$image' target='_blank'><img src='$image' class='d-block w-10'></a>";
                 echo "</div>";
                 $active = ""; // Remove "active" after the first image
             }
