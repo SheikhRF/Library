@@ -20,7 +20,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body class = "grey_bg">
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -62,8 +63,7 @@
     </div>
 </nav>
 
-<div class="container-fluid grey_bg text-light">
-    hello
+<!-- <div class="container-fluid grey_bg text-light"> -->
     <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <?php
@@ -82,8 +82,8 @@
     <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
     </button>
-</div>
-</div>
+    </div>
+<!-- </div> -->
 
 </body>
 </html>
