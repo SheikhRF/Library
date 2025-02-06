@@ -12,6 +12,10 @@
 
     <link href="mystyle.css" rel="stylesheet">
 
+    <?php
+        $images = glob("images/*.{jpg,png,gif}", GLOB_BRACE); // Fetch all images from "images" folder
+    ?>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -60,6 +64,25 @@
 
 <div class="container-fluid grey_bg text-light">
     hello
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <?php
+            $active = "active"; // First image should be active
+            foreach ($images as $image) {
+                echo "<div class='carousel-item $active'>";
+                echo "<a href='$image' target='_blank'><img src='$image' class='d-block w-100'></a>";
+                echo "</div>";
+                $active = ""; // Remove "active" after the first image
+            }
+            ?>
+        </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
 </div>
 
 </body>
