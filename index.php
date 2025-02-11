@@ -58,7 +58,9 @@
                         <button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">ACCOUNT</button>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">LOGIN</button>
+                        <a href="login.php">
+                            <button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">LOGIN</button>
+                        </a>
                     </li>
                 </div>
             </ul>
@@ -66,7 +68,7 @@
     </div>
 </nav>
 
-<div class="container-fluid bigpad"></div>
+<div class="bigpad container-fluid">&nbsp</div>
 
 <div class="container-fluid grey_bg text-light">
     <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -75,7 +77,7 @@
             $active = "active"; // First image should be active
             foreach ($images as $image) {
                 echo "<div class='carousel-item $active'>";
-                echo "<a href='$image' target='_blank'><img src='$image' class='mx-auto d-block w-10'></a>";
+                echo "<a href='$image' target='_blank'><img src='$image' class='mx-auto rounded-3 d-block w-10'></a>";
                 echo "</div>";
                 $active = ""; // Remove "active" after the first image
             }
@@ -88,6 +90,8 @@
         <span class="carousel-control-next-icon"></span>
     </button>
 </div>
+
+<div class+""
 
 </body>
 </html>
