@@ -47,7 +47,7 @@
             </li>
                 <div class="d-flex gap-2">
                     </li>
-                        <a href="index.html">
+                        <a href="index.php">
                             <button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">HOME</button>
                         </a>
                     </li>
@@ -57,20 +57,25 @@
                     <li class="nav-item">
                         <button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">ACCOUNT</button>
                     </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">LOGIN</button>
+                    </li>
                 </div>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- <div class="container-fluid grey_bg text-light"> -->
+<div class="container-fluid bigpad"></div>
+
+<div class="container-fluid grey_bg text-light">
     <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <?php
             $active = "active"; // First image should be active
             foreach ($images as $image) {
                 echo "<div class='carousel-item $active'>";
-                echo "<a href='$image' target='_blank'><img src='$image' class='d-block w-10'></a>";
+                echo "<a href='$image' target='_blank'><img src='$image' class='mx-auto d-block w-10'></a>";
                 echo "</div>";
                 $active = ""; // Remove "active" after the first image
             }
@@ -82,8 +87,7 @@
     <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
     </button>
-    </div>
-<!-- </div> -->
+</div>
 
 </body>
 </html>

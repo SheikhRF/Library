@@ -7,3 +7,8 @@
     height: 400px;
     object-fit: cover;
 };
+
+.bigpad{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
