@@ -108,7 +108,8 @@
         $count=0;
 
         foreach($result as $row){
-            if(£count%3==0 && count!=0){
+            
+            if($count%3==0 && $count!=0){
                 echo("</div><div class='row'>");
             }
 
