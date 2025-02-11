@@ -33,17 +33,6 @@
         
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto"> 
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Page 1
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Page 1-1</a></li>
-                        <li><a class="dropdown-item" href="#">Page 1-2</a></li>
-                        <li><a class="dropdown-item" href="#">Page 1-3</a></li>
-                    </ul>
-                </li> -->
             </li>
                 <div class="d-flex gap-2">
                     </li>
