@@ -13,7 +13,7 @@
     <link href="mystyle.css" rel="stylesheet">
 
     <?php
-        $images = glob("images/*.{jpg,png,gif}", GLOB_BRACE); // Fetch all images from "images" folder
+        $books = glob("images/*.{jpg,png,gif}", GLOB_BRACE); // Fetch all images from "images" folder
     ?>
 
     <meta charset="utf-8">
@@ -85,7 +85,7 @@
                 echo "<a href='book_details.php?book_id=" . $book['book_id'] . "'>";
                 echo "<img src='" . $book['cover'] . "' class='mx-auto rounded-3 d-block w-10' alt='Book Cover'>";
                 echo "</a>";
-                echo "</div>";
+                    echo "</div>";
                 $active = ""; // Remove "active" after the first image
             }
             ?>
