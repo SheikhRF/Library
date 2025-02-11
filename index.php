@@ -62,6 +62,11 @@
                             <button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">LOGIN</button>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="signUp.php">
+                            <button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">SIGNUP</button>
+                        </a>
+                    </li>
                 </div>
             </ul>
         </div>
@@ -91,7 +96,13 @@
     </button>
 </div>
 
-<div class+""
+<div class="container-fluid dark_grey_bg">
+
+    <?php
+
+    ?>
+
+</div>
 
 </body>
 </html>

@@ -11,4 +11,8 @@
 .bigpad{
     padding-top: 50px;
     padding-bottom: 50px;
+};
+
+.dark_grey_bg{
+    background-color: rgb(46, 46, 46);
 }
