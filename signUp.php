@@ -45,7 +45,7 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Phone Number:</label>
-                                <input type="text" name="phone_num" class="form-control" required>
+                                <input type="text" name="phone_num" class="form-control" minlength="11" maxlength="11" required>
                             </div>
                             <button type="submit" class="btn btn-dark w-100">Sign Up</button>
                         </form>

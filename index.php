@@ -79,7 +79,9 @@
             $active = "active"; // First image should be active
             foreach ($images as $image) {
                 echo "<div class='carousel-item $active'>";
-                echo "<a href='$image' target='_blank'><img src='$image' class='mx-auto rounded-3 d-block w-10'></a>";
+                echo "<a href='book_details.php?book_id=" . $book['book_id'] . "'>";
+                echo "<img src='" . $book['cover'] . "' class='mx-auto rounded-3 d-block w-10' alt='Book Cover'>";
+                echo "</a>";
                 echo "</div>";
                 $active = ""; // Remove "active" after the first image
             }
