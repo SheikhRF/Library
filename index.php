@@ -52,9 +52,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">BASKET</button>
-                    </li>
-                    <li class="nav-item">
                         <button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">ACCOUNT</button>
                     </li>
                     <li class="nav-item">
@@ -99,10 +96,28 @@
 <div class="container-fluid dark_grey_bg">
 
     <?php
+        include_once('connection.php');
 
+        $stmt = $conn->prepare("SELECT cover FROM tbl_books");
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        
+        $count=0;
+
+        foreach($result as $row){
+            if(£count%3==0 && count!=0){
+                echo("</div><div class='row'>");
+            }
+
+            echo("<div class='ol'>");
+            echo("<img scr='".htmlspecialchars($row['cover'])."'alt='book cover' class='img-fluid'>");
+            echo("</div>");
+
+            $count++;
+        }
+        echo("</div>")
     ?>
-
-</div>
 
 </body>
 </html>
