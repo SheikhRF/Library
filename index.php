@@ -12,9 +12,9 @@
 
     <link href="mystyle.css" rel="stylesheet">
 
-    <?php
+    <!-- <?php
         $books = glob("images/*.{jpg,png,gif}", GLOB_BRACE); // Fetch all images from "images" folder
-    ?>
+    ?>  -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -77,7 +77,7 @@
         <div class="carousel-inner">
             <?php
             $active = "active"; // First image should be active
-            foreach ($images as $image) {
+            foreach ($books as $book) {
                 echo "<div class='carousel-item $active'>";
                 echo "<a href='book_details.php?book_id=" . $book['book_id'] . "'>";
                 echo "<img src='" . $book['cover'] . "' class='mx-auto rounded-3 d-block w-10' alt='Book Cover'>";
@@ -103,7 +103,10 @@
         $stmt = $conn->prepare("SELECT cover FROM tbl_books");
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+        
+        $stmt = $conn->prepare("SELECT book_id, cover FROM tbl_books");
+        $stmt->execute();
+        $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         $count=0;
 
@@ -114,7 +117,7 @@
             }
 
             echo("<div class='ol'>");
-            echo("<img scr='".htmlspecialchars($row['cover'])."'alt='book cover' class='img-fluid'>");
+            echo("<img src='".htmlspecialchars($row['cover'])."'alt='book cover' class='img-fluid'>");
             echo("</div>");
 
             $count++;
