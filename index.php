@@ -40,6 +40,7 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <li class="nav-item"><button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">ACCOUNT</button></li>
                 <li class="nav-item"><a href="login.php"><button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">LOGIN</button></a></li>
                 <li class="nav-item"><a href="signUp.php"><button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">SIGNUP</button></a></li>
+                <li class="nav-item"><a href="Books.php"><button type="button" class="btn btn-dark btn-outline-light border-4 rounded-2">ADD BOOK</button></a></li>
             </ul>
         </div>
     </div>
@@ -70,5 +71,39 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </button>
     </div>
 </div>
+
+<br><br><br><div class="container-fluid dark_grey_bg">
+
+    <?php
+        include_once('connection.php');
+
+        $stmt = $conn->prepare("SELECT title,cover,book_id FROM tbl_books");
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        $stmt = $conn->prepare("SELECT book_id, cover FROM tbl_books");
+        $stmt->execute();
+        $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        $count=0;
+
+        foreach($result as $row){
+            
+            if($count%3==0){
+                echo("</div><div class='row'>");
+            }
+                echo("<div class='col text-center'>");
+                echo "<a href='book.php?book_id=" . $row['book_id'] . "'>";
+                echo("<img src='".htmlspecialchars($row['cover'])."'alt='book cover' class='img-fluid rounded-2' style='width: 80%;'>");
+                echo "</a>";
+                echo("<p class='mt-2'>" . htmlspecialchars($row['title']) . "</p>");
+                echo("</div>");
+
+            $count++;
+        }
+        echo("</div>")
+    ?>
+</div>
+
 </body>
 </html>
