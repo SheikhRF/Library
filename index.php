@@ -17,6 +17,15 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link href="mystyle.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Add custom styles for the carousel images */
+        .carousel-item img {
+            max-width: 300px; /* Set the maximum width of the images */
+            max-height: 400px; /* Set the maximum height of the images */
+            width: auto; /* Maintain aspect ratio */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
 </head>
 <body class="grey_bg">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -45,8 +54,8 @@ $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $active = "active"; // First image should be active
             foreach ($books as $book) {
                 echo "<div class='carousel-item $active'>";
-                echo "<a href='book_details.php?book_id=" . $book['book_id'] . "'>";
-                echo "<img src='" . $book['cover'] . "' class='mx-auto rounded-3 d-block w-10' alt='Book Cover'>";
+                echo "<a href='book.php?book_id=" . $book['book_id'] . "'>";
+                echo "<img src='" . $book['cover'] . "' class='mx-auto rounded-3 d-block' alt='Book Cover'>";
                 echo "</a>";
                 echo "</div>";
                 $active = ""; // Remove "active" after the first image
